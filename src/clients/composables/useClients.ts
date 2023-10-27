@@ -24,9 +24,13 @@ const useClients = () => {
     }
   )
 
-  watch(data, (clients) => {
-    if (clients) store.setClients(clients)
-  })
+  watch(
+    data,
+    (clients) => {
+      if (clients) store.setClients(clients)
+    },
+    { immediate: true }
+  )
 
   return {
     // Properties
